@@ -1,6 +1,6 @@
 import { each } from '../problems';
 
-xdescribe('each', () => {
+describe('each', () => {
   it('should iterate over arrays, providing access to the element, index, and array itself', () => {
     const animals = ['ant', 'bat', 'cat'];
     const iterationInputs = [];
@@ -63,7 +63,7 @@ xdescribe('each', () => {
     ]);
   });
 
-  xit('should throw an error if invalid inputs are given', () => {
+  it('should throw an error if invalid inputs are given', () => {
     expect(() => each()).toThrowError();
     expect(() => each(null)).toThrowError();
     expect(() => each(null, () => {})).toThrowError();

@@ -12,5 +12,19 @@ callback function over each item in the input collection.
 */
 
 export default function each(collection, callback) {
-  // Your code here
+  if (typeof callback !== 'function') {
+    throw new Error();
+  }
+
+  if (typeof collection === 'string' || collection.length) {
+    for (let i = 0; i < collection.length; i++) {
+      callback(collection[i], i, collection);
+    }
+  } else if (typeof collection === 'object') {
+    for (const prop in collection) {
+      callback(collection[prop], prop, collection);
+    }
+  } else {
+    throw new Error();
+  }
 }
