@@ -9,5 +9,7 @@ Note: the order of the output array is not guaranteed to be consistent across di
 import { each } from '.';
 
 export default function keys(object) {
-  // Your code here
+  const result = [];
+  each(object, (i, key) => result.push(String(key)));
+  return result;
 }

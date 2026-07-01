@@ -1,6 +1,6 @@
 import { keys } from '../problems';
 
-xdescribe('keys', () => {
+describe('keys', () => {
   it('should return a list of keys of the provided object', () => {
     expect(keys({ a: 1, b: 2, c: 3 })).toEqual(['a', 'b', 'c']);
   });
