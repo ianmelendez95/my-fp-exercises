@@ -1,6 +1,6 @@
 import { equals } from '../problems';
 
-xdescribe('equals', () => {
+describe('equals', () => {
   it('should compare two values', () => {
     expect(equals(1, 1)).toBe(true);
     expect(equals(1, 2)).toBe(false);
@@ -33,7 +33,7 @@ xdescribe('equals', () => {
     expect(equals({}, [])).toBe(false);
   });
 
-  xit('should do a deep equality on objects', () => {
+  it('should do a deep equality on objects', () => {
     const a = { a: { two: 2, arr: [null, { c: true }] } };
     const b = { a: { two: 2, arr: [null, { c: true }] } };
     const c = { a: { three: 3, arr: [null, { c: true }] } };
