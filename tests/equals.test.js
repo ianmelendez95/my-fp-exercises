@@ -1,3 +1,4 @@
+import * as R from 'ramda';
 import { equals } from '../problems';
 
 describe('equals', () => {
@@ -41,13 +42,26 @@ describe('equals', () => {
     expect(equals(a, c)).toBe(false);
   });
 
-  xit('should handle cyclical objects', () => {
+  it('should handle cyclical objects', () => {
+    // const f = {};
+    // const g = {};
+    // const h = {};
+    // const i = {};
+
+    // f.v = g;
+    // g.v = h;
+
+    // h.v = f;
+    // // i.v = f;
+
+    // expect(R.equals(f, h)).toBe(false);
+
     const a = {};
     const b = {};
     a.v = a;
     b.v = b;
 
-    expect(equals(a, {})).toBe(false);
+    expect(equals(a, {})).toBe(R.equals(a, {}));
     expect(equals(a, b)).toBe(true);
 
     const c = {};
@@ -57,8 +71,8 @@ describe('equals', () => {
     d.v = c;
     e.z = e;
 
-    expect(equals(a, c)).toBe(false);
-    expect(equals(c, d)).toBe(false);
+    expect(equals(a, c)).toBe(true);
+    expect(equals(c, d)).toBe(true);
     expect(equals(e, a)).toBe(false);
   });
 });
