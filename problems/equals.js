@@ -114,7 +114,7 @@ function _objectEquals(valA, valB, visitedA = [], visitedB = []) {
   }
 
   for (const key of aKeys) {
-    if (!_equalsVisited(valA[key], valB[key], visitedA.concat([valA]), visitedB.concat([valB]))) {
+    if (!_equalsVisited(valB[key], valA[key], visitedA.concat([valA]), visitedB.concat([valB]))) {
       return false;
     }
   }

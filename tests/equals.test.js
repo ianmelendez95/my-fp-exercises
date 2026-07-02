@@ -43,19 +43,6 @@ describe('equals', () => {
   });
 
   it('should handle cyclical objects', () => {
-    // const f = {};
-    // const g = {};
-    // const h = {};
-    // const i = {};
-
-    // f.v = g;
-    // g.v = h;
-
-    // h.v = f;
-    // // i.v = f;
-
-    // expect(R.equals(f, h)).toBe(false);
-
     const a = {};
     const b = {};
     a.v = a;
@@ -71,8 +58,8 @@ describe('equals', () => {
     d.v = c;
     e.z = e;
 
-    expect(equals(a, c)).toBe(true);
     expect(equals(c, d)).toBe(true);
+    expect(equals(a, c)).toBe(true);
     expect(equals(e, a)).toBe(false);
   });
 });
